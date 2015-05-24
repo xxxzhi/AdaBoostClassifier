@@ -36,7 +36,7 @@ class AbsAdaBoostClassifier(BaseClassifier):
         weights = np.ones(num_rows) * 1.0 / num_rows
         for n in range(self.num_rounds):
             error = 0.
-            random_indices = resample(weights)
+            random_indices = AbsAdaBoostClassifier.resample(weights)
             resampled_entries_x = []
             resampled_entries_y =[]
             for i in range(num_rows):
